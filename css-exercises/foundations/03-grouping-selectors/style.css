@@ -1,0 +1,15 @@
+.pos,
+.neg {
+    font-size: 28px;
+    font-style: Helvetica  "Times New Roman" "sans-serif";
+}
+
+.pos {
+    background-color: black;
+    color: white;
+}
+
+.neg {
+    background-color: yellow;
+    color: black;
+}

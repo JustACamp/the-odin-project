@@ -1,0 +1,75 @@
+<form action="https://httpbin.org/post" method="post">
+    <p>
+        <label for="main">Main:</label>
+        <input type="text" name="main" id="main" placeholder="Meat or Veggie">
+    </p>
+    <p>
+        <label for="first_course">First Course:</label>
+        <input type="text" name="first_course" id="first_course" placeholder="Salad or Soup">
+    </p>
+    <p>
+        <label for="second_course">Second Course:</label>
+        <input type="text" name="second_course" id="second_course" placeholder="Side">
+    </p>
+    <p>
+        <label for="user_email">Email:</label>
+        <input type="email" name="email" id="user_email" placeholder="you@example.com">
+    </p>
+    <p>
+        <label for="user_password">Password:</label>
+        <input type="password" name="password" id="user_password" placeholder="password">
+    </p>
+    <p>
+        <label for="order_quantity">Quantity:</label>
+        <input type="number" name="quantity" id="order_quantity">
+    </p>
+    <p>
+        <label for="user_bday">Birthdate</label>
+        <input type="date" name="dob" id="user_bday">
+    </p>
+    <p>
+        <textarea rows="20" cols="40">Special Instructions</textarea>
+    </p>
+    <select name="Desert">
+        <optgroup label="Desert">
+            <option value="tiramisu" selected>Tiramisu</option>
+            <option value="jojo">JoJo</option>
+            <option value="sirene">Sirene</option>
+            <option value="crepeCake">Crepe Cake</option>
+            <option value="nanaimoBar">Nanaimo Bar</option>
+            
+        </optgroup>
+    </select>
+    <h5>Review</h5>
+    <fieldset>
+        <legend>Please rate us</legend>
+        <p>
+            <label for="review5">5</label>
+            <input type="radio" name="review" id="review5">
+            <label for="review4">4</label>
+            <input type="radio" name="review" id="review4">
+            <label for="review3">3</label>
+            <input type="radio" name="review" id="review3">
+            <label for="review2">2</label>
+            <input type="radio" name="review" id="review2">
+            <label for="review1">1</label>
+            <input type="radio" name="review" id="review1">
+        </p>
+    </fieldset>
+    <h5>Pizza Toppings</h5>
+    <div>
+        <input type="checkbox" id="artichokes" name="toppings">
+        <label for="artichokes">Artichokes</label>
+    </div>
+    <div>
+        <input type="checkbox" id="pepperoni" name="toppings">
+        <label for="pepperoni">Pepperoni</label>
+    </div>
+    <div>
+        <input type="checkbox" id="onions" name="toppings">
+        <label for="onions">Onions</label>
+    </div>
+    <input type="number" name="age" id="age" min="1" max="10" step="0.01" />
+
+    <button type="submit">Order!</button>
+</form>
