@@ -1,0 +1,139 @@
+@font-face {
+    font-family: "Norse-Bold";
+    src: url('/Users/justincampbell/repos/the-odin-project/projects/sign-up-form/fonts/Norse-Bold.otf');
+}
+
+body {
+    margin: 0px;
+}
+
+.content {
+    display:  flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+    background-color: rgba(75, 75, 75, 1);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+.picture {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: 60%; */
+    background-image: url(images/DSC06890.jpg);
+    /* background-position: right; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50vw;
+    height: auto;
+}
+
+div {
+    color: black;
+    /* background-color: whitesmoke; */
+}
+
+.logo {
+    /* flex: 1; */
+    display: flex;
+    /* flex-flow: row wrap; */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0.5;
+    font-size: xx-large;
+    text-align: center;
+    font-family: "Norse-Bold";
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 20vh;
+    /* vertical-align: middle; */
+    /* height: auto; */
+}
+
+
+.left {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 50vw;
+    height: 100vh;
+}
+
+.right {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 50vw;
+    height: 100vh;
+    /* padding: 20px; */
+    justify-content: center;
+    background-color: rgb(242, 242, 242);
+}
+
+.form-title {
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-flow: row wrap;
+    box-shadow: 0px 2px 0.25em gray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    margin: 0px;
+    gap: 20px;
+    background-color: white;
+}
+.input {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.7rem;
+    width: 40%;
+    /* padding: 20px; */
+}
+
+
+input {
+    border-radius: 3px;
+}
+
+.top {
+    padding: 20px;
+}
+.bottom{
+    padding: 20px;
+}
+
+#submit {
+    background-color: #596D48;
+    border-radius: 5px;
+    padding: 5px 20px 5px 20px;
+}
+
+
+a {
+    text-decoration-line: none;
+    color: forestgreen;
+}
+
+.error {
+    color: red;
+}
+
+:focus {
+    box-shadow: 0.5px;
+    border-color: blue;
+}
+
+button:hover {
+    color: white;
+}
+a:hover {
+    color: white;
+}
