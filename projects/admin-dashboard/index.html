@@ -5,108 +5,199 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    
 </head>
 <body>
     <div class="content">
         <div class="header">
-            <div class="logo"></div>
-            <input type="search">
-            <button class="alert">Bell</button>
-            <div class="logo">LOGO</div>
-            <div class="name">Justin Campbell</div>
+            <div class="top-header-left">
+                <i class="material-icons">search</i>
+                <input type="search">
+            </div>
+            <div class="top-header-right">
+                <!-- <div> -->
+                    <button class="alert"><i class="material-icons">notifications</i></button>
+                    <span class="material-symbols-outlined">settings</span>
+                    <div class="name">Justin Campbell</div>
+                <!-- </div>  -->
+            </div>
+            <div class="low-header-left">
+                <span class="material-symbols-outlined">settings</span>
+                <div class="hello">
+                    <p>Hi there,</p>
+                    <H4>Justin Campbell (@JCamp)</H>
+                </div>
+            </div>
+            <div class="low-header-right">
+                <button class="button-header">New</button>
+                <button class="button-header">Upload</button>
+                <button class="button-header">Share</button>
+            </div>
         </div>
         <div class="sidebar">
             <div class="dashboard">
                 <div class="logo"></div>
-                <div>Dashboard</div>
+                <H2>Dashboard</H2>
             </div>
-            <div class="home">
-                <div class="logo"></div>
-                <div>Home</div>
+            <div>
+                <div class="home">
+                    <div class="logo"></div>
+                    <div>Home</div>
+                </div>
+                <div class="profile">
+                    <div class="logo"></div>
+                    <div>Profile</div>
+                </div>
+                <div class="messages">
+                    <div class="logo"></div>
+                    <div>Messages</div>
+                </div>
+                <div class="history">
+                    <div class="logo"></div>
+                    <div>History</div>
+                </div>
+                <div class="tasks">
+                    <div class="logo"></div>
+                    <div>Tasks</div>
+                </div>
+                <div class="communities">
+                    <div class="logo"></div>
+                    <div>Communities</div>
+                </div>
             </div>
-            <div class="profile">
-                <div class="logo"></div>
-                <div>Profile</div>
-            </div>
-            <div class="messages">
-                <div class="logo"></div>
-                <div>Messages</div>
-            </div>
-            <div class="history">
-                <div class="logo"></div>
-                <div>History</div>
-            </div>
-            <div class="tasks">
-                <div class="logo"></div>
-                <div>Tasks</div>
-            </div>
-            <div class="communities">
-                <div class="logo"></div>
-                <div>Communities</div>
-            </div>
-            <div class="settings">
-                <div class="logo"></div>
-                <div>Settings</div>
-            </div>
-            <div class="support">
-                <div class="logo"></div>
-                <div>Support</div>
-            </div>
-            <div class="privacy">
-                <div class="logo"></div>
-                <div>Privacy</div>
+            <div>
+                <div class="settings">
+                    <div class="logo"></div>
+                    <div>Settings</div>
+                </div>
+                <div class="support">
+                    <div class="logo"></div>
+                    <div>Support</div>
+                </div>
+                <div class="privacy">
+                    <div class="logo"></div>
+                    <div>Privacy</div>
+                </div>
             </div>
         </div>
         <div class="main-content">
             <div class="projects">
-                <div class="card">
-                    <H1>Cool Project</H1>
-                    <p>This is my super duper cool project.</p>
-                    <button class="icon">Favorite</button>
-                    <button class="icon">Enlarge</button>
-                    <button class="icon">Share</button>
-                </div>
-                <div class="card">
-                    <H1>Less Cool Project</H1>
-                    <p>This is my less cool project.</p>
-                    <button class="icon">Favorite</button>
-                    <button class="icon">Enlarge</button>
-                    <button class="icon">Share</button>
-                </div>
-                <div class="card">
-                    <H1>Impossible App</H1>
-                    <p>This is my ridiculous application.</p>
-                    <button class="icon">Favorite</button>
-                    <button class="icon">Enlarge</button>
-                    <button class="icon">Share</button>
-                </div>
-                <div class="card">
-                    <H1>Easy App</H1>
-                    <p>This is my easy app.</p>
-                    <button class="icon">Favorite</button>
-                    <button class="icon">Enlarge</button>
-                    <button class="icon">Share</button>
-                </div>
-                <div class="card">
-                    <H1>Ad blocker</H1>
-                    <p>This is my ad blocker.</p>
-                    <button class="icon">Favorite</button>
-                    <button class="icon">Enlarge</button>
-                    <button class="icon">Share</button>
-                </div>
-                <div class="card">
-                    <H1>Money Maker</H1>
-                    <p>This is my money maker.</p>
-                    <button class="icon">Favorite</button>
-                    <button class="icon">Enlarge</button>
-                    <button class="icon">Share</button>
+                <H2 id="project-title">Your Projects</H2>
+                <div class="project-grid">
+                    <div class="card">
+                        <div>
+                            <h3>Cool Project</h3>
+                            <p>This is my super duper cool project.</p>
+                        </div>
+                        <div class="card-buttons">
+                            <button class="icon"><i class="material-icons">star_rate</i></button>
+                            <button class="icon"><i class="material-icons">visibility</i></button>
+                            <button class="icon"><i class="material-icons">share</i></button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <h3>Less Cool Project</h3>
+                            <p>This is my less cool project.</p>
+                        </div>
+                        <div class="card-buttons">
+                            <button class="icon"><i class="material-icons">star_rate</i></button>
+                            <button class="icon"><i class="material-icons">visibility</i></button>
+                            <button class="icon"><i class="material-icons">share</i></button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <h3>Impossible App</h3>
+                            <p>This is my ridiculous application.</p>
+                        </div>
+                        <div class="card-buttons">
+                            <button class="icon"><i class="material-icons">star_rate</i></button>
+                            <button class="icon"><i class="material-icons">visibility</i></button>
+                            <button class="icon"><i class="material-icons">share</i></button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <h3>Easy App</h3>
+                            <p>This is my easy app.</p>
+                        </div>
+                        <div class="card-buttons">
+                            <button class="icon"><i class="material-icons">star_rate</i></button>
+                            <button class="icon"><i class="material-icons">visibility</i></button>
+                            <button class="icon"><i class="material-icons">share</i></button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <h3>Ad blocker</h3>
+                            <p>This is my ad blocker.</p>
+                        </div>
+                        <div class="card-buttons">
+                            <button class="icon"><i class="material-icons">star_rate</i></button>
+                            <button class="icon"><i class="material-icons">visibility</i></button>
+                            <button class="icon"><i class="material-icons">share</i></button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <h3>Money Maker</h3>
+                            <p>This is my money maker.</p>
+                        </div>
+                        <div class="card-buttons">
+                            <button class="icon"><i class="material-icons">star_rate</i></button>
+                            <button class="icon"><i class="material-icons">visibility</i></button>
+                            <button class="icon"><i class="material-icons">share</i></button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="announcements">
-                announcements
+                <H2>Announcements</H2>
+                <div class="card">
+                    <H4>Site Maintenance</H4>
+                    <p>Vestibules are funky tent things.</p>
+                    <H4>Site Maintenance</H4>
+                    <p>Vestibules are funky tent things.</p>
+                    <H4>Site Maintenance</H4>
+                    <p>Vestibules are funky tent things.</p>
+                </div>
             </div>
             <div class="trending">
-                trending
+                <H2>Trending</H2>
+                <div class="card">
+                    <div class="trending-item">
+                        <i class="material-icons">surfing</i>
+                        <div>
+                            <p>@tegan</p>
+                            <p>Surfer</p>
+                        </div>
+                    </div>
+                    <div class="trending-item">
+                        <i class="material-icons">emoji_nature</i>
+                        <div>
+                            <p>@tegan</p>
+                            <p>World Peace Builder</p>
+                        </div>
+                    </div>
+                    <div class="trending-item">
+                        <i class="material-icons">skateboarding</i>
+                        <div>
+                            <p>@tegan</p>
+                            <p>Camper</p>
+                        </div>
+                    </div>
+                    <div class="trending-item">
+                        <i class="material-icons">bakery_dining</i>
+                        <div>
+                            <p>@tegan</p>
+                            <p>Croissanteur</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
