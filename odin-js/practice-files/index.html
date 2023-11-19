@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODIN-JS Project: Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="objects.js" defer></script>
+
+</head>
+<body>
+    <div class="mainContent">
+        <button type="button" class="btn-open" id="newBook">New Book</button>
+        <div id="formPopup">
+            <form action="#" id="form" class="form">
+                <p>
+                    <input type="text" name="title" id="title">
+                    <label for="title">Title</label>
+                </p>
+                <p>
+                    <input type="text" name="author" id="author">
+                    <label for="author">Author</label>
+                </p>
+                <p>
+                    <input type="text" name="pages" id="pages">
+                    <label for="pages">Pages</label>
+                </p>
+                <p>
+                    <input type="text" name="read" id="read">
+                    <label for="read">Read?</label>
+                </p>
+                <p>
+                    <input type="text" name="rating" id="rating">
+                    <label for="rating">Rating</label>
+                </p>
+                <p>
+                    <button type="submit" name="submit" onclick="submitForm()" id="submit">Submit</button>
+                    <button type="button" id="btn-cancel">Cancel</button>
+                </p>
+            </form>
+        </div>
+        <table class="table">
+                <tr class="tableHeader">
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Read?</th>
+                    <th>Rating</th>
+                </tr>
+            <tbody id="tableBody"></tbody>
+                <tr class="tablerow">
+                    <th>test</th>
+                    <th>test</th>
+                    <th>test</th>
+                    <th>test</th>
+                    <th>test</th>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    
+</body>
+</html>

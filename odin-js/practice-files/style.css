@@ -1,0 +1,40 @@
+body {
+    color: white;
+    background-color: darkslategrey;
+    font-family: calibri;
+}
+
+/* #form {
+    display: none;
+    padding: 20px;
+} */
+
+#formPopup {
+    display: none;
+    padding: 20px;
+}
+
+html {
+    font-family: sans-serif;
+}
+  
+table {
+border-collapse: collapse;
+border: 2px solid rgb(200,200,200);
+letter-spacing: 1px;
+font-size: 0.8rem;
+}
+
+td, th {
+border: 1px solid rgb(190,190,190);
+padding: 10px 20px;
+}
+
+td {
+text-align: center;
+}
+
+caption {
+padding: 10px;
+}
+
