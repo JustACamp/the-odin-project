@@ -4,14 +4,28 @@ body {
     font-family: calibri;
 }
 
+.mainContent{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    padding: 20px;
+}
+
+#newBook {
+    grid-column: span 1;
+}
+
 /* #form {
     display: none;
     padding: 20px;
 } */
 
 #formPopup {
-    display: none;
+    /* display: none; */
     padding: 20px;
+    /* width: 225px; */
+    border: 1px solid black;
+    grid-column: 1;
 }
 
 html {
@@ -23,6 +37,8 @@ border-collapse: collapse;
 border: 2px solid rgb(200,200,200);
 letter-spacing: 1px;
 font-size: 0.8rem;
+grid-column: 2;
+grid-row: 1 span end;
 }
 
 td, th {

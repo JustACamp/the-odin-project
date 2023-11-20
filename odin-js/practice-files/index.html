@@ -14,27 +14,31 @@
         <div id="formPopup">
             <form action="#" id="form" class="form">
                 <p>
-                    <input type="text" name="title" id="title">
                     <label for="title">Title</label>
+                    <input type="text" name="title" id="title">
                 </p>
                 <p>
-                    <input type="text" name="author" id="author">
                     <label for="author">Author</label>
+                    <input type="text" name="author" id="author">
                 </p>
                 <p>
-                    <input type="text" name="pages" id="pages">
                     <label for="pages">Pages</label>
+                    <input type="text" name="pages" id="pages">
                 </p>
                 <p>
-                    <input type="text" name="read" id="read">
                     <label for="read">Read?</label>
+                    <input type="text" name="read" id="read">
                 </p>
                 <p>
-                    <input type="text" name="rating" id="rating">
                     <label for="rating">Rating</label>
+                    <input type="text" name="rating" id="rating">
                 </p>
                 <p>
-                    <button type="submit" name="submit" onclick="submitForm()" id="submit">Submit</button>
+                    <label for="review">Review</label>
+                    <textarea name="review" id="review"></textarea>
+                </p>
+                <p>
+                    <button type="submit" name="submit" onclick="submitForm(false)" id="submit">Submit</button>
                     <button type="button" id="btn-cancel">Cancel</button>
                 </p>
             </form>
@@ -44,18 +48,11 @@
                     <th>Title</th>
                     <th>Author</th>
                     <th>Pages</th>
-                    <th>Read?</th>
+                    <th>Read</th>
                     <th>Rating</th>
+                    <th>Review</th>
                 </tr>
-            <tbody id="tableBody"></tbody>
-                <tr class="tablerow">
-                    <th>test</th>
-                    <th>test</th>
-                    <th>test</th>
-                    <th>test</th>
-                    <th>test</th>
-                </tr>
-            </tbody>
+                <tbody id="tableBody"></tbody>
         </table>
         
     </div>

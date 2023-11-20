@@ -1,8 +1,10 @@
 const body = document.querySelector("body");
+const form = document.querySelector("form");
 const newBook = document.getElementById("newBook");
 const table = document.querySelector("table");
 const submit = document.getElementById('submit');
 const cancel = document.getElementById('btn-cancel');
+
 
 newBook.addEventListener('click', function () { 
     document.getElementById('formPopup').style.display = "block";
@@ -10,23 +12,22 @@ newBook.addEventListener('click', function () {
 
 cancel.addEventListener('click', () => {
     document.getElementById('formPopup').style.display = "none"
+    form.reset();
 });
 
-function submitForm (event) {
-    let title = document.getElementById('title').value;
-    let author = document.getElementById('author').value;
-    let pages = document.getElementById('pages').value;
-    let read = document.getElementById('read').value;
-    let rating = document.getElementById('rating').value;
-    const formInput = new Book(title , author , pages , read , rating);
+function submitForm(event) {
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const pages = document.getElementById('pages').value;
+    const read = document.getElementById('read').value;
+    const rating = document.getElementById('rating').value;
+    const review = document.getElementById('review').value;
+    const formInput = new Book(title, author, pages, read, rating, review);
     console.log(formInput);
-    // event.preventDefault();
     addBookToLibrary(formInput);
     dispLib(myLibrary);
+    form.reset();
 }
-
-
-// const myLibrary=[];
 
 const myLibrary = [
     {
@@ -46,12 +47,15 @@ const myLibrary = [
     }
 ];
 
-function Book (title, author, pages, read, rating) {
+dispLib(myLibrary);
+
+function Book (title, author, pages, read, rating, review) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
     this.rating = rating;
+    this.review = review;
 }
 
 function addBookToLibrary(book) {
@@ -62,17 +66,14 @@ function addBookToLibrary(book) {
 function dispLib(myLibrary) {
     const oldTbody = document.getElementById('tableBody');
     const newTbody = document.createElement('tbody');
-    newTbody.setAttribute = ('id', 'tableBody');
-    table.appendChild(oldTbody);
+    table.replaceChild(newTbody, oldTbody);
+    newTbody.setAttribute('id', 'tableBody');
     
-    // const tablerow = document.querySelectorAll('tablerow');
-    // table.replaceChild(oldTbody, newTbody);
 
     // Rebuild Table: for each item make new row, add column items, append to 
     myLibrary.forEach(function (item) {
         const newRow = document.createElement('tr');
         newTbody.appendChild(newRow);
-        // newRow.className('row');
 
         const newCol1 = document.createElement('td');
         newCol1.textContent=item.title;
@@ -94,9 +95,11 @@ function dispLib(myLibrary) {
         newCol5.textContent=item.rating;
         newRow.appendChild(newCol5);
 
+        const newCol6 = document.createElement('td');
+        newCol6.textContent=item.review;
+        newRow.appendChild(newCol6);
+
+        table.appendChild(newTbody);
         return (item);
-        // console.table(item);
     })
 }
-
-// event.preventDefault();
