@@ -1,0 +1,70 @@
+@font-face {
+    font-family: "PoiretOne";
+    src: url("/src/assets/PoiretOne-Regular.ttf");
+}
+
+#content{
+    padding: 20px;
+    display: flex; 
+    flex-Direction: column; 
+    align-Items: Center;
+}
+
+body {
+    margin: 0px;
+}
+
+img{
+    width: 500px;
+    height: auto;
+    border: solid grey 2px;
+    border-radius: 10px;
+}
+
+h1{
+    margin: 0;
+    font-family: "PoiretOne";
+    padding-left: 20px;
+}
+
+p {
+    border: solid forestgreen 1px;
+    background-color: bisque;
+    text-align: center;
+    justify-content: center;
+    font-family: "PoiretOne";
+}
+
+button{
+    border: solid forestgreen 1px;
+    background-color: bisque;
+    border-radius: 2px;
+    font-family: "PoiretOne";
+
+}
+button:hover {
+    border: 2px;
+}
+
+#tabDiv{
+    /* color: bisque; */
+    /* background-color: forestgreen; */
+    display: grid;
+    grid-auto-flow: column;
+    padding: 0px;
+    font-size: large;
+    gap: 0px;
+}
+
+/* #tabOne {
+    color: green;
+}
+
+#tabTwo {
+    color: red;
+}
+
+#tabThree {
+    color: orange;
+} */
+
