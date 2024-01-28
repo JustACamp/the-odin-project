@@ -4,6 +4,7 @@
 }
 
 #content{
+    flex: 1;
     padding: 20px;
     display: flex; 
     flex-Direction: column; 
@@ -11,23 +12,30 @@
 }
 
 body {
+    min-height: 100vh;
     margin: 0px;
+    display: flex;
+    flex-direction: column;
+    font-family: "PoiretOne";
+    /* width: 50vw; */
+    /* background-color: lightgoldenrodyellow; */
 }
 
-img{
+img {
     width: 500px;
     height: auto;
     border: solid grey 2px;
     border-radius: 10px;
+    padding: 15px;
 }
 
 h1{
     margin: 0;
     font-family: "PoiretOne";
-    padding-left: 20px;
+    padding-left: 2.5vw;
 }
 
-p {
+#headerPara{
     border: solid forestgreen 1px;
     background-color: bisque;
     text-align: center;
@@ -53,7 +61,44 @@ button:hover {
     grid-auto-flow: column;
     padding: 0px;
     font-size: large;
-    gap: 0px;
+    /* gap: 0px; */
+}
+
+#menuHead {
+    font-size: 60px;
+    text-decoration: underline;
+    /* font-weight: bold; */
+    font-family: "PoiretOne";
+    margin: 0px;
+}
+
+#menu {
+    white-space: pre-line;
+    text-align: center;
+    font-family: "PoiretOne";
+}
+
+#footer {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw;
+}
+
+#menuSection{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#menuItem {
+    /* padding-top: 20px; */
+    font-weight: bold;
+    font-size: 20px;
+}   
+
+#itemDesc {
+    font-style: italic;
 }
 
 /* #tabOne {
