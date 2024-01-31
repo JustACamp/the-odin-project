@@ -5,6 +5,7 @@ function homePage () {
     content.appendChild(homePara);
     const image1 = document.createElement("img");
     image1.setAttribute("src","../src/assets/C&J-WEDDING-202.jpg");
+    image1.setAttribute("alt", "Bruschetta with heirloom tomatoes");
     const image2 = document.createElement("img");
     image2.setAttribute("src","../src/assets/C&J WEDDING-321.jpg");
     const image3 = document.createElement("img");

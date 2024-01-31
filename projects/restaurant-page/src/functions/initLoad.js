@@ -6,6 +6,7 @@ function initLoad () {
     title.textContent = "Restaurant Landing Pages"
     head.appendChild(title);
 
+    // create header
     const header = document.createElement('div');
     header.setAttribute("id","header");
     body.prepend(header);
@@ -36,10 +37,12 @@ function initLoad () {
     tabThree.textContent = "contact";
     tabThree.setAttribute("id", "tabThree");
 
+    // append tabs
     tabDiv.appendChild(tabOne);
     tabDiv.appendChild(tabTwo);
     tabDiv.appendChild(tabThree);
 
+    // create footer
     const footer = document.createElement("div");
     footer.setAttribute("id","footer");
 
@@ -51,7 +54,7 @@ function initLoad () {
     footerRight.setAttribute("id", "footerRight");
     footerRight.textContent = "Copyright 2024";
 
-    
+    // append footer
     footer.appendChild(footerLeft);
     footer.appendChild(footerRight);
     body.appendChild(footer);
