@@ -1,4 +1,4 @@
-// business, address, phone, etc.
+// module for updating the contact page
 
 function contactPage() {
     const body = document.body;

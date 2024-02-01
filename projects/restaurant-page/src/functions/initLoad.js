@@ -12,35 +12,35 @@ function initLoad () {
     body.prepend(header);
     const headline = document.createElement('h1');
     headline.textContent = "nettle and thyme";
+
+    //create header paragraph
     const headLinePara = document.createElement('p');
     headLinePara.setAttribute("id","headerPara");
     headLinePara.textContent = "Your amazing tiny home away from home";
     header.appendChild(headline);
     header.appendChild(headLinePara);
     
-    // create tab div
+    // create tab div container
     const tabDiv = document.createElement('div');
     tabDiv.setAttribute("id", "tabDiv");
     header.appendChild(tabDiv);
 
 
-    // create tabs
+    // create tab buttons
     const tabOne = document.createElement('button');
-    const tabTwo = document.createElement('button');
-    const tabThree = document.createElement('button');
-    
-    
     tabOne.textContent = "home";
     tabOne.setAttribute("id", "tabOne");
+    tabDiv.appendChild(tabOne);
+
+    const tabTwo = document.createElement('button');
     tabTwo.textContent = "menu";
     tabTwo.setAttribute("id", "tabTwo");
+    tabDiv.appendChild(tabTwo);
+    
+    const tabThree = document.createElement('button');
     tabThree.textContent = "contact";
     tabThree.setAttribute("id", "tabThree");
-
-    // append tabs
-    tabDiv.appendChild(tabOne);
-    tabDiv.appendChild(tabTwo);
-    tabDiv.appendChild(tabThree);
+    tabDiv.appendChild(tabThree);   
 
     // create footer
     const footer = document.createElement("div");
