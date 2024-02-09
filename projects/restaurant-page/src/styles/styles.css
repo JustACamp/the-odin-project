@@ -5,10 +5,18 @@
 
 #content{
     flex: 1;
-    padding: 20px;
+    margin-top: 20px;
     display: flex; 
     flex-Direction: column; 
     align-Items: Center;
+}
+
+#content.bg{
+    /* background-image: url(../assets/C&J\ WEDDING-363.jpg); */
+    background-size: cover;
+    background-position: center;
+    /* border: 2px solid black; */
+    /* border-radius: 10px; */
 }
 
 body {
@@ -17,6 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: "PoiretOne";
+    background-color: rgba(28,110,164,0.2);
     /* width: 50vw; */
     /* background-color: lightgoldenrodyellow; */
 }
@@ -24,9 +33,10 @@ body {
 img {
     width: 500px;
     height: auto;
-    border: solid grey 2px;
-    border-radius: 10px;
-    padding: 15px;
+    border: solid grey 1px;
+    /* border-radius: 10px; */
+    /* padding: 15px; */
+    margin: 20px 0px;
 }
 
 h1{
@@ -44,14 +54,16 @@ h1{
 }
 
 button{
-    border: solid forestgreen 1px;
+    border: solid black 1px;
+    border-style: solid none;
     background-color: bisque;
-    border-radius: 2px;
+    /* border-radius: 2px; */
     font-family: "PoiretOne";
 
 }
 button:hover {
-    border: 2px;
+    border: solid black 1px;
+    border-style: solid none;
 }
 
 #tabDiv{
@@ -62,6 +74,25 @@ button:hover {
     padding: 0px;
     font-size: large;
     /* gap: 0px; */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+.contentDiv{
+    width: 100%;
+    flex: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contentDiv p {
+    margin: 50px;
 }
 
 #menuHead {

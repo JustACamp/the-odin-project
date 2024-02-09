@@ -1,3 +1,5 @@
+// module for initial page load
+
 function initLoad () {
     const head = document.head;
     const body = document.body;
@@ -16,7 +18,7 @@ function initLoad () {
     //create header paragraph
     const headLinePara = document.createElement('p');
     headLinePara.setAttribute("id","headerPara");
-    headLinePara.textContent = "Your amazing tiny home away from home";
+    headLinePara.textContent = "Fresh food from the soil of Vancouver Island";
     header.appendChild(headline);
     header.appendChild(headLinePara);
     
@@ -27,6 +29,16 @@ function initLoad () {
 
 
     // create tab buttons
+    // <ul>
+    //     <li><a href="#home">Home</a></li>
+    //     <li><a href="#menu">Menu</a></li>
+    //     <li><a href="#contact">Contact</a></li>
+    //     <li style="float:right"></li>
+    // </ul>
+
+
+
+
     const tabOne = document.createElement('button');
     tabOne.textContent = "home";
     tabOne.setAttribute("id", "tabOne");
@@ -40,7 +52,7 @@ function initLoad () {
     const tabThree = document.createElement('button');
     tabThree.textContent = "contact";
     tabThree.setAttribute("id", "tabThree");
-    tabDiv.appendChild(tabThree);   
+    tabDiv.appendChild(tabThree);
 
     // create footer
     const footer = document.createElement("div");

@@ -1,3 +1,5 @@
+// module for updating the DOM of the Menu Page.
+
 function menuPage() {
 
     function addMenuItem(item,price,description) {
@@ -21,6 +23,7 @@ function menuPage() {
     
     const body = document.body;
     const content = document.getElementById('content');
+    content.className = "";
     const menuHead = document.createElement('p');
     menuHead.setAttribute("id", "menuHead");
     const menu = document.createElement('div');
