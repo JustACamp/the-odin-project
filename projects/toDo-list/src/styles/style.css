@@ -1,0 +1,15 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: red;
+}
+
+.header{
+    color: red;
+}
+
+
+/* .list{
+    color: red;
+} */
