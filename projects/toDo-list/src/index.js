@@ -15,13 +15,12 @@
 import './styles/style.css';
 import initLoad from "./functions/initLoad";
 import ToDoItem from "./functions/createToDo";
+import chgPriority from './functions/chgPriority';
+import addList from './functions/addNewList';
 
 initLoad();
-const item1 = new ToDoItem ("Description", "4/5", "High Priority","Notes","Add checklist");
-console.log(item1.desc, item1.dueDate);
-const list = document.querySelector(".list");
-const item = document.createElement("div");
-item.classList = ("item");
-list.appendChild(item);
+// const item1 = new ToDoItem ("Description", "4/5", "High Priority","Notes","Add checklist");
+// console.log(item1.desc, item1.dueDate);
+
 
 
