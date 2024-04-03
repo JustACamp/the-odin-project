@@ -14,9 +14,9 @@
 // figure out how to add methods back to object properties after they are fetched.
 import './styles/style.css';
 import initLoad from "./functions/initLoad";
-import ToDoItem from "./functions/createToDo";
+// import ToDoItem from "./functions/createToDo";
 import chgPriority from './functions/chgPriority';
-import addList from './functions/addNewList';
+import addList from './functions/createList';
 
 initLoad();
 // const item1 = new ToDoItem ("Description", "4/5", "High Priority","Notes","Add checklist");

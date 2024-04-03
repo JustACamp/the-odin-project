@@ -1,84 +1,181 @@
-import ToDoItem from "./createToDo";
-import addNewList from "./addNewList";
-import modalPopUp from "./modalPopUp";
+import createList from "./createList";
+import ToDoItem from "./itemConstructor";
+import Lists from "./listConstructor";
+import createItem from "./createItem";
 
 export default function initLoad() {
+    const pageObject = {
+        lists: [
+        ],
+    };
+    pageObject.lists[0] = new Lists("Listy 1");
+    // pageObject.lists[0].listTitle = "List 1";
+    pageObject.lists[0].items[0] = new ToDoItem;
+    pageObject.lists[0].items[0].title = "Item 1";
+    // pageObject.lists[0].items[1] = new ToDoItem;
+    // pageObject.lists[0].items[1].title = "List1 item 2";
+    // pageObject.lists[1] = new Lists;
+    // pageObject.lists[1].listTitle = "List 2";
+    // pageObject.lists[1].items[0] = new ToDoItem;
+    // pageObject.lists[1].items[0].title = "List2 Item1"
+    // pageObject.lists[2] = new Lists;
+    // pageObject.lists[2].listTitle = "List 3";
+
+    // console.log(pageObject);
+
+    //render page function
+    // for each list in page object, createlist();x
+    
+    // add if statements to createlist and createitem for processing data. if no data, have defaults ready.
+
     const body = document.body;
 
     // create header elements
-    const header = document.createElement("div");
-    header.className = "header";
+        const header = document.createElement("div");
+        header.className = "header";
 
-    const headerHero = document.createElement("div");
-    headerHero.className = "headerHero";
-    headerHero.textContent = "LemonJello";
-    header.appendChild(headerHero);
+        const headerTitle = document.createElement("div");
+        headerTitle.className = "headerTitle";
+        headerTitle.textContent = "LemonJello";
+        header.appendChild(headerTitle);
 
-    const headerMenu = document.createElement("div");
-    headerMenu.className = "headerMenu";
-    header.appendChild(headerMenu);
-     
-    const menu = document.createElement("button");
-    menu.className = "btn";
-    menu.textContent = ("MENU");
-    headerMenu.appendChild(menu);
+        const headerMenu = document.createElement("div");
+        headerMenu.className = "headerMenu";
+        header.appendChild(headerMenu);
+        
+        // const menuButton = document.createElement("button");
+        // menuButton.className = "btn";
+        // menuButton.textContent = ("MENU");
+        // headerMenu.appendChild(menuButton);
 
     // create content div
-    const content = document.createElement("div");
-    content.className = "content";
+        const contentDiv = document.createElement("div");
+        contentDiv.className = "content";
 
-    // add lists
-    const list1 = document.createElement("div");
-    list1.className = "list";
-    list1.setAttribute("id","list1");
+        body.append(header, contentDiv);
+
+    // create newListDiv
+
+        const newListDiv = document.createElement("div");
+        newListDiv.className = "newListDiv";
+        contentDiv.append(newListDiv);
     
-    const list2 = document.createElement("div");
-    list2.className = "list";
+    // addList button and input
 
-    const addNewListDiv = document.createElement("div");
-    addNewListDiv.className = "addNewListDiv";
 
-    //input method
-    const addButton = document.createElement("input");
-    addButton.setAttribute("placeholder", "Add Card..");
-    addButton.setAttribute("type", "text");
-    addButton.setAttribute("id", "addBtn");
-    addButton.setAttribute("name","addBtn");
+        const addListBtn = document.createElement("button");
+        addListBtn.className = "addListBtn";
+        // addListBtn.setAttribute("onfocus","this.value=''");
+        addListBtn.textContent = "Add New List..";
+        addListBtn.addEventListener("click", () => {
+            addListBtn.replaceWith(addListInput);
+            addListInput.focus();
+            saveDiv.style.visibility = "visible";
+        });
 
-    // add buttons
-    const addButton1 = document.createElement("button");
-    addButton1.className = "btn";
-    addButton1.setAttribute("id","addButton1");
-    addButton1.textContent = "Add Card..";
-    addButton1.addEventListener("click", () => {
-        const item1 = new ToDoItem();
-    });
+        // const addListBtn = document.createElement("input");
+        // addListBtn.type = "button";
+        // addListBtn.className = "addListBtn";
+        // // addListBtn.setAttribute("onfocus","this.value=''");
+        // addListBtn.value = "Add New List..";
+        // addListBtn.addEventListener("click", () => {
+        //     // addListBtn.replaceWith(addListInput);
+        //     // addListBtn.value = ' ';
+        //     addListBtn.type = "text";
+        //     addListBtn.className = "addListInput";
+        //     addListBtn.placeholder = "Add New List... buddy";
+        //     // addListBtn.value = "";
+        //     addListBtn.focus();
+        //     // addListInput.focus();
+        //     saveDiv.style.visibility = "visible";
+        // });
 
-    const addButton2 = document.createElement("button");
-    addButton2.className = "btn";
-    addButton2.setAttribute("id","addButton2");
-    addButton2.textContent = "Add Card..";
-    addButton2.addEventListener("click", () => {
-        modalPopUp();
-    });
+        const addListInput = document.createElement("input");
+        addListInput.className = "addListInput";
+        addListInput.placeholder = "Add New List..."
+        addListInput.onfocus = () => {
+            saveDiv.style.visibility = "visible";
+        }
 
-    const addListBtn = document.createElement("button");
-    addListBtn.className = "btn";
-    addListBtn.textContent = "Add List..";
-    addListBtn.addEventListener("click", () => {
-        addNewList();
-    });
+    // save & cancel buttons
+
+        const saveDiv = document.createElement("div");
+        saveDiv.setAttribute("class","saveDiv");
+        saveDiv.style.visibility = "hidden";
+
+        const addListSaveBtn = document.createElement("button");
+        addListSaveBtn.className = "save"
+        addListSaveBtn.setAttribute("id", "addListSaveBtn");
+        addListSaveBtn.textContent = "Save";
+        addListSaveBtn.addEventListener("click", () => {
+            pageObject.lists.push(new Lists(addListInput.value));
+            const numLists = pageObject.lists.length-1;
+            createList(numLists, pageObject);                         // create list, pass the 'add list' input value as the title
+            saveDiv.style.visibility = "hidden";
+            addListBtn.value = "Add New List...";                   // reset the 'add list' button value
+            addListInput.setAttribute("onfocus","this.value=''");
+            addListInput.replaceWith(addListBtn);                   // replace input with button
+            // addListBtn.value = "Add New List...";
+            // addListBtn.setAttribute("onfocus","this.value=''");
+        });
+
+        const cancelBtn = document.createElement("button");
+        cancelBtn.setAttribute("id", "cancelBtn");
+        cancelBtn.innerHTML = "&times";
+
+        cancelBtn.addEventListener("click", () => {
+            saveDiv.style.visibility = "hidden";
+            // saveDiv.remove();
+            addListInput.placeholder = "Add New List..."
+            addListInput.replaceWith(addListBtn);
+        });
+
+        saveDiv.append(addListSaveBtn,cancelBtn);
+
+        
+
+        window.onclick = function(event) {
+            if ((event.target != addListSaveBtn) && (event.target != addListInput) && (event.target != addListBtn)) {
+                saveDiv.style.visibility = "hidden";
+            }
+        };
+
+        addListInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+            event.preventDefault();
+            addListSaveBtn.click();
+            // const listName = addListInput.value
+            // newListDiv.append(saveDiv);
+            };
+        });
+        
+        newListDiv.appendChild(addListBtn);
+        newListDiv.append(saveDiv);
+
+        
+        for (let listIndex in pageObject.lists) {
+            // console.log(listIndex);
+            // console.log(pageObject.lists[listIndex]);
+            createList(listIndex, pageObject);
+            for (let itemIndex in pageObject.lists[listIndex].items) {
+                // console.log(listIndex + "," + pageObject.lists[listIndex].items[itemIndex].title);
+                // console.log(itemIndex);
+                // console.log(pageObject.lists[listIndex].items[itemIndex]);
+                let itemObject = pageObject.lists[listIndex].items[itemIndex];
+
+                createItem(listIndex, pageObject, itemObject);
+                for (let itemContent in itemObject){
+                    // console.log(pageObject.lists[listIndex].items[itemIndex][itemContent]);
+                }
+            }
+        }
+        
+
+        // const initItem = new ToDoItem();
+
+        // console.log(pageObject);
 
     // append buttons
-    list1.appendChild(addButton1);
-    list1.append(addButton);
-    list2.appendChild(addButton2);
-    addNewListDiv.appendChild(addListBtn);
-
-    //append divs
-    content.prepend(list1,list2, addNewListDiv);
-    body.append(header, content);
-
-
     
+    //append divs
 };

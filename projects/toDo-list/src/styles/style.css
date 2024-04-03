@@ -6,7 +6,7 @@ body{
     align-items: center;
     background-color: cadetblue;
     border: 0px;
-    margin: 10px;
+    margin: 0px;
     padding: 0px;
     /* width: 100vw; */
     height: 100vh;
@@ -33,7 +33,6 @@ body{
     padding: 0px 20px;
 }
 
-
 .content{
     display: flex;
     flex: 1;
@@ -42,16 +41,22 @@ body{
     width: 100%;
     overflow: auto;
     height: 100%;
-    
 }
 
 .list{
     display: flex;
     flex-direction: column;
+    /* flex: initial; */
+    /* height: auto; */
+    flex-direction: column;
     justify-content: baseline;
     background-color: white;
     border: 1px solid black;
     border-radius: 5px;
+    overflow: scroll;
+    max-width: fit-content;
+    /* padding: 5px; */
+    /* margin: 5px; */
 }
 
 .addNewListDiv{
@@ -59,11 +64,11 @@ body{
 }
 
 .list,
-.addNewListDiv{
-    min-width: 200px;
-    margin: 5px;
+.newListDiv{
+    min-width: 300px;
+    margin: 10px;
     padding: 10px;
-    gap: 20px;
+    gap: 10px;
     
 }
 
@@ -71,17 +76,51 @@ body{
 .toDoDiv {
     /* width: 90rem; */
     border: 1px solid skyblue;
-    min-height: 50px;
+    min-height: 100px;
     background-color: lightcoral;
 
 }
 
-.btn {
+#addBtn{
+    border: none;
+}
+
+#addBtn:hover{
+    font-weight: bold;
+    background-color: gainsboro;
+}
+
+.items{
+    display: block;
+    border: 1px solid skyblue;
+    min-height: 100px;
+    background-color: lightcoral;
+    border-radius: 2px;
+}
+
+.saveDiv{
+    /* display: flex;
+    justify-content: space-evenly; */
+    padding: 10px;
+}
+
+.save{
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-image: linear-gradient(180deg, rgb(82, 177, 82), rgb(37, 127, 37));
+    font-weight: bold;
+    display: inline;
+}
+
+.addListBtn {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: 1px solid skyblue;
     background-color: lightcoral;
     text-align: left;
     color: white;
+    border-radius: 4px;
 }
 
 .btn:hover{
@@ -94,20 +133,65 @@ body{
     display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
+    left: 0%;
+    top: 0%;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(76, 175, 80, 0.01);
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.25);
   }
 
-  .modal-content {
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: fixed;
+    left: 12.5%;
+    top: 12.5%;
+    width: 75%;
+    height: 75%;
+    overflow: auto;
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 2px solid #888;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.25);
     width: 80%;
+  }
+
+  .close{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+
+  .title{
+    margin-top: 40px;
+  }
+
+  input[type=text],
+  textarea {
+    display: block;
+  }
+
+  .inputVal {
+    font-weight: bold;
+  }
+
+  checkbox:checked {
+    text-decoration: line-through ;
+  }
+
+  .checklist{
+    display: block;
+  }
+
+  .checkboxDiv {
+    display: block;
+  }
+
+  .checkboxLabel {
+    display: inline-block;
   }
