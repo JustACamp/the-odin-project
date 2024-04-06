@@ -1,5 +1,5 @@
 
-export default function ToDoItem (list) {
+export default function ToDoItem () {
     // this.list = list;
     // this.item = item;
     this.title = "Item Title Fool...";

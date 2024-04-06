@@ -1,10 +1,13 @@
 import saveToStorage from "./saveToStorage";
 
-export default function modalPopUp(listIndex, itemButton, itemObject) {
+export default function modalPopUp(listIndex, itemButton, itemObject, pageObject) {
 
     // console.log(listIndex);
     // console.log(itemButton);
     // console.log(itemObject);
+
+    const itemIndex = pageObject.lists[listIndex].items.indexOf(itemObject);
+    console.log(itemIndex);
 
     // define item
         const button = itemButton;
@@ -171,16 +174,66 @@ export default function modalPopUp(listIndex, itemButton, itemObject) {
         priorityList.append(option1,option2,option3);
         priorityDiv.append(priorityList);
     
+
+    //
+        const delModalDiv = document.createElement("div");
+        saveDiv.setAttribute("class","saveModalDiv");
+
+        const delModalBtn = document.createElement("button");
+        delModalBtn.setAttribute("id", "delModalBtn");
+        delModalBtn.className = "delete";
+        delModalBtn.textContent = "Delete Item";
+        delModalBtn.addEventListener("click", () => {
+            pageObject.lists[listIndex].items.splice(itemIndex,1);
+            // pageObject.lists[listIndex].items[itemIndex].splice(0,1);
+            modal.remove();
+            itemButton.remove();
+            let stringObject = JSON.stringify(pageObject);
+            saveToStorage(stringObject);
+        });
+
+        delModalDiv.append(delModalBtn);
+
+    // save modal button
+
+        const saveModalDiv = document.createElement("div");
+        saveDiv.setAttribute("class","saveModalDiv");
+
+        const saveModalBtn = document.createElement("button");
+        saveModalBtn.setAttribute("id", "saveModalBtn");
+        saveModalBtn.className = "save";
+        saveModalBtn.textContent = "Save Item";
+
+        saveModalBtn.addEventListener("click", () => {
+            let stringObject = JSON.stringify(pageObject);
+            console.log(stringObject);
+            saveToStorage(stringObject);                                        // save to local storage
+
+            modal.style.visibility = "hidden";
+        });
+
+        const cancelModalBtn = document.createElement("button");
+        cancelModalBtn.setAttribute("id", "cancelModalBtn");
+        cancelModalBtn.innerHTML = "&times";
+
+        cancelModalBtn.addEventListener("click", () => {
+            // saveDiv.style.display = "none";
+        modal.style.visibility = "hidden";
+
+        });
+
+        saveModalDiv.append(saveModalBtn,cancelModalBtn);
+
+    
     // modal click logic
         window.addEventListener("click", function(event) {
             if (event.target.className == "modal") {
             modal.style.visibility = "hidden";
-            // saveToStorage();
             }
         });
    
     //append elements
-        modalContent.append(close, titleEl, desc, checklist, priorityDiv);
+        modalContent.append(close, titleEl, desc, checklist, priorityDiv, saveModalDiv, delModalDiv);
         modal.append(modalContent);
         body.append(modal);
         modal.style.visibility = "hidden";

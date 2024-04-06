@@ -2,31 +2,22 @@ import createList from "./createList";
 import ToDoItem from "./itemConstructor";
 import Lists from "./listConstructor";
 import createItem from "./createItem";
+import getFromStorage from "./getFromStorage";
+import { format, compareAsc, getDate, getDay, getTime } from "date-fns";
+
+const fns = require('date-fns')
+
+console.log(fns.format(new Date(), "yyyy-MM-dd'T'HH:mm:ss.SSS"))
+//=> [
+//   Wed Feb 11 1987 00:00:00,
+//   Mon Jul 10 1989 00:00:00,
+//   Sun Jul 02 1995 00:00:00
+// ]
 
 export default function initLoad() {
-    const pageObject = {
-        lists: [
-        ],
-    };
-    pageObject.lists[0] = new Lists("Listy 1");
-    // pageObject.lists[0].listTitle = "List 1";
-    pageObject.lists[0].items[0] = new ToDoItem;
-    pageObject.lists[0].items[0].title = "Item 1";
-    // pageObject.lists[0].items[1] = new ToDoItem;
-    // pageObject.lists[0].items[1].title = "List1 item 2";
-    // pageObject.lists[1] = new Lists;
-    // pageObject.lists[1].listTitle = "List 2";
-    // pageObject.lists[1].items[0] = new ToDoItem;
-    // pageObject.lists[1].items[0].title = "List2 Item1"
-    // pageObject.lists[2] = new Lists;
-    // pageObject.lists[2].listTitle = "List 3";
-
-    // console.log(pageObject);
-
-    //render page function
-    // for each list in page object, createlist();x
-    
-    // add if statements to createlist and createitem for processing data. if no data, have defaults ready.
+    let pageObject = getFromStorage();
+    console.log(pageObject);
+   
 
     const body = document.body;
 
@@ -112,9 +103,9 @@ export default function initLoad() {
             const numLists = pageObject.lists.length-1;
             createList(numLists, pageObject);                         // create list, pass the 'add list' input value as the title
             saveDiv.style.visibility = "hidden";
-            addListBtn.value = "Add New List...";                   // reset the 'add list' button value
+            addListBtn.value = "Add New List...";                     // reset the 'add list' button value
             addListInput.setAttribute("onfocus","this.value=''");
-            addListInput.replaceWith(addListBtn);                   // replace input with button
+            addListInput.replaceWith(addListBtn);                     // replace input with button
             // addListBtn.value = "Add New List...";
             // addListBtn.setAttribute("onfocus","this.value=''");
         });
@@ -162,7 +153,6 @@ export default function initLoad() {
                 // console.log(itemIndex);
                 // console.log(pageObject.lists[listIndex].items[itemIndex]);
                 let itemObject = pageObject.lists[listIndex].items[itemIndex];
-
                 createItem(listIndex, pageObject, itemObject);
                 for (let itemContent in itemObject){
                     // console.log(pageObject.lists[listIndex].items[itemIndex][itemContent]);

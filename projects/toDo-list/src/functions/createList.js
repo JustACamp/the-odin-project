@@ -7,8 +7,9 @@ import ToDoItem from "./itemConstructor";
 
 
 export default function createList(listIndex, pageObject) {
+        // pageObject.lists[listIndex] = new Lists();                      // set new list at list index
+
         let newList = pageObject.lists[listIndex];
-        console.log(pageObject.lists[listIndex]);
 
 
         // queries
@@ -50,7 +51,6 @@ export default function createList(listIndex, pageObject) {
                     listTitle.textContent = newList.listTitle;
                     listTitleInput.blur();
                     listTitleInput.replaceWith(listTitle);
-                    
                 };
             });
 
@@ -127,6 +127,25 @@ export default function createList(listIndex, pageObject) {
             listDiv.append(saveDiv);
             saveDiv.style.visibility = "hidden";
 
+            //
+        const delListDiv = document.createElement("div");
+        saveDiv.setAttribute("class","saveListDiv");
+
+        const delListBtn = document.createElement("button");
+        delListBtn.setAttribute("id", "delListBtn");
+        delListBtn.className = "delete";
+        delListBtn.textContent = "Delete List";
+        delListBtn.addEventListener("click", () => {
+            pageObject.lists.splice(listIndex,1);
+            // pageObject.lists[listIndex].items[itemIndex].splice(0,1);
+            listDiv.remove();
+            let stringObject = JSON.stringify(pageObject);
+            saveToStorage(stringObject);
+            console.log(pageObject);
+        });
+
+        delListDiv.append(delListBtn);
+        listDiv.append(delListDiv);
 
             window.addEventListener("click", function(event) {
                 if (event.target != addItemInput) {
