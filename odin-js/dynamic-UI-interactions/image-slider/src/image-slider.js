@@ -56,6 +56,7 @@
             };
         });
     };
+    selectCircles(0);
 
     function moveSlideDiv (imageIndex) {
         transVar = imageWidth * imageIndex;
@@ -65,9 +66,13 @@
         selectCircles(imageIndex);
     };
     
-    
+    function slideTimer () {
+        if (imageIndex < images.length-1) {
+            imageIndex += 1;
+        } else if (imageIndex == images.length -1) {
+            imageIndex = 0;
+        };
+        moveSlideDiv(imageIndex);
+    };
 
-
-// right arrow moves one image over
-// clicking nav dots move to the image of that nav dot
-// image width * image index gives relative position
+    window.setInterval(slideTimer, 5000);
