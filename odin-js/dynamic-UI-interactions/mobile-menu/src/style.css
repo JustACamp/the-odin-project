@@ -1,0 +1,77 @@
+:root{
+    --headHeight: 50px;
+}
+
+body{
+    font-family: Avenir Next W02, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    background-color: #ffffff00;
+    font-size: 16px;
+}
+
+.drop-down-menu {
+    display: block;
+    /* width: 200px; */
+    /* visibility: hidden; */
+    /* position:  relative --headHeight 0; */
+
+}
+
+.item {
+    padding: 5px;
+    text-align: center;
+}
+
+.header {
+    /* display: flex;
+    flex-direction: row;
+    height: --headHeight;
+    align-content: flex-start; */
+    /* width: 25%; */
+
+}
+
+.btn, btn:hover {
+    /* border-radius: 0px; */
+    /* width: 200px; */
+    /* height: 50px; */
+    /* text-align: left; */
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.menuHeader {
+    display: flex;
+
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.menu {
+    /* display: inline; */
+    border-top: 1px solid grey;
+}
+
+.collapse{
+    display: none;
+}
+
+ul , a {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    color: black;
+    
+}
+
+.mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
